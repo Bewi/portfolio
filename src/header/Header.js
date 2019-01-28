@@ -81,7 +81,7 @@ class Header extends Component {
   }
   
   handleScroll() {
-    const shouldDisplay = window.pageYOffset > window.innerHeight - 74;
+    const shouldDisplay = window.pageYOffset > window.innerHeight - 64;
 
     if (shouldDisplay && !this.state.display) {
       this.setState({ display: true });

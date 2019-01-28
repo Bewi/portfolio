@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 import Header from './header/Header';
-import Main from './main/Main';
+import WrapperLight from './layout/WrapperLight';
+import WrapperDark from './layout/WrapperDark';
 import Hero from './header/Hero';
 
 const theme = createMuiTheme({
@@ -36,7 +37,10 @@ class App extends Component {
       <MuiThemeProvider theme={theme}>
           <Header />
           <Hero />
-          <Main />
+          <WrapperLight />
+          <WrapperDark />
+          <WrapperLight />
+          <WrapperDark />
       </MuiThemeProvider>
     );
   }

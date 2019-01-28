@@ -9,6 +9,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faLinkedin, faGithubAlt } from '@fortawesome/free-brands-svg-icons';
 
 const styles = {
+  noShaddows: {
+    boxShadow: 'none'
+  },
   grow: {
     flexGrow: 1,
   },
@@ -16,7 +19,7 @@ const styles = {
     marginLeft: -12,
     marginRight: 20,
   },
-  '@keyframes slideDown': {
+  '@keyframes slideDownAndFade': {
     from: {opacity: 0, top: -10},
     to: {opacity: 1, top: 0}
   },
@@ -25,7 +28,7 @@ const styles = {
     opacity: 0
   },
   appear: {
-    animationName: 'slideDown',
+    animationName: 'slideDownAndFade',
     animationDuration: '0.3s',
     animationTimingFunction: 'ease-out',
     animationIterationCount: 1,
@@ -58,10 +61,10 @@ class Header extends Component {
 
     const {classes} = this.props;
     return (
-      <AppBar>
+      <AppBar className={classes.noShaddows}>
         <Toolbar>
           <Typography variant="h6" color="inherit" className={classNames(classes.grow, classes.item, classes.appear)}>
-            Benjamin Wilfart
+            BeWi
           </Typography>
           <Typography variant="h6" color="inherit" className={classNames(classes.grow, classes.item, classes.appear)}>
             Web developper

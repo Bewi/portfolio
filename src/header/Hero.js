@@ -13,8 +13,7 @@ const styles = theme => ({
     flexDirection: 'column',
     alignItems: 'center',
     justifyContent: 'center',
-    color: theme.palette.text.primary,
-    boxShadow: theme.shadows[4]
+    color: theme.palette.text.primary
   },
   subTitle: {
     color: theme.palette.text.secondary

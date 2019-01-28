@@ -39,11 +39,11 @@ class WrapperDark extends Component {
     return (
       <section className={classes.container} ref={this.containerRef}>
         <div className={classes.placeholder}></div>
-        <Brick discover={this.state.discover}>
-          <BrickHeader>
+        <Brick discover={this.state.discover} theme="dark">
+          <BrickHeader theme={this.state.discover ? 'light' : 'dark'}>
             <Typography variant="h4" color="inherit">Super title</Typography>
           </BrickHeader>
-          <BrickBody>
+          <BrickBody theme="dark">
             <Typography variant="body1" color="inherit">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vestibulum leo sem. Interdum et malesuada fames ac ante ipsum primis in faucibus. Suspendisse potenti. Cras suscipit ex nec pharetra cursus. Aenean venenatis ac eros sagittis semper. Nulla ante neque, molestie quis congue sed, tempor at ipsum. Curabitur malesuada semper dui, nec consectetur mauris vulputate id. Fusce lacus metus, aliquam vel mauris eget, euismod ullamcorper eros. Vestibulum scelerisque condimentum lobortis. Vivamus erat enim, luctus et gravida ut, feugiat ultrices justo.
               <br /><br />

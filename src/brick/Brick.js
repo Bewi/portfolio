@@ -8,7 +8,7 @@ const classes = theme => ({
     flexDirection: 'column',
     position: 'relative',
     marginTop: theme.spacing.unit * 5,
-    marginBottom: theme.spacing.unit * 5,
+    marginBottom: 0,
     marginRight: theme.spacing.unit * 3,
     marginLeft: theme.spacing.unit * 3,
     [theme.breakpoints.up(1100 + theme.spacing.unit * 3 * 2)]: {
@@ -19,7 +19,7 @@ const classes = theme => ({
     animation: 'slideDown',
     animationDuration: '0.3s',
     animationTimingFunction: 'ease-out',
-    animationFillMode: 'forwards'
+    animationFillMode: 'forwards',
   },
   discover: {
     animation: 'slideUp',
@@ -28,13 +28,13 @@ const classes = theme => ({
     animationFillMode: 'forwards'
   },
   '@keyframes slideUp': {
-    from: { top: 0, color: 'black' },
-    to: { top: -100, color: 'white' }
+    from: { top: 0 },
+    to: { top: -100 }
   },
   '@keyframes slideDown': {
-    from: { top: -100, color: 'white' },
-    to: { top: 0, color: 'black' }
-  },
+    from: { top: -100 },
+    to: { top: 0 }
+  }
 })
 
 class Brick extends Component {

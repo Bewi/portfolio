@@ -5,7 +5,8 @@ import PropTypes from 'prop-types';
 
 const classes = theme => ({
   body: {
-    marginTop: theme.spacing.unit * 2
+    marginTop: theme.spacing.unit * 2,
+    marginBottom: theme.spacing.unit * 2,
   },
   dark: {
     color: theme.palette.primary.contrastText

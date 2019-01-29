@@ -8,13 +8,7 @@ const classes = theme => ({
   container: {
     display: 'flex',
     flexDirection: 'column',
-    overflow: 'hidden',
     backgroundColor: theme.palette.primary.main,
-  },
-  placeholder: {
-    minHeight: 100,
-    backgroundColor: 'white',
-    display: 'flex',
   },
 })
 
@@ -38,7 +32,6 @@ class WrapperDark extends Component {
     const { classes } = this.props;
     return (
       <section className={classes.container} ref={this.containerRef}>
-        <div className={classes.placeholder}></div>
         <Brick discover={this.state.discover} theme="dark">
           <BrickHeader theme={this.state.discover ? 'light' : 'dark'}>
             <Typography variant="h4" color="inherit">Super title</Typography>
@@ -56,7 +49,7 @@ class WrapperDark extends Component {
   }
 
   handleScroll() {
-    const shouldDisplay = window.pageYOffset > (this.containerRef.current.offsetTop - 64) || window.pageYOffset >= (document.body.offsetHeight - window.innerHeight - 1);
+    const shouldDisplay = window.pageYOffset > (this.containerRef.current.offsetTop - 64 - 100) || window.pageYOffset >= (document.body.offsetHeight - window.innerHeight - 1);
     if (shouldDisplay && !this.state.discover) {
       this.setState({ discover: true });
     } else if (!shouldDisplay && this.state.discover) {

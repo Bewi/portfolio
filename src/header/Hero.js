@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import { withStyles, Typography } from '@material-ui/core';
 import IconButton from '@material-ui/core/IconButton';
+import Tooltip from '@material-ui/core/Tooltip';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faLinkedin, faGithubAlt } from '@fortawesome/free-brands-svg-icons';
+import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import classNames from 'classnames';
 
 const styles = theme => ({
@@ -43,12 +45,21 @@ class Hero extends Component {
           > Web developper <span className={classes.cursor}>_</span>
         </Typography>
         <div className={classes.spacing}>
-          <IconButton color="inherit">
-            <FontAwesomeIcon icon={faGithubAlt} />
-          </IconButton>
-          <IconButton color="inherit">
-            <FontAwesomeIcon icon={faLinkedin} />
-          </IconButton>
+          <Tooltip title="Github">
+            <IconButton color="inherit" href="https://github.com/Bewi" target="_blank" >
+              <FontAwesomeIcon icon={faGithubAlt} />
+            </IconButton>
+          </Tooltip>
+          <Tooltip title="LinkedIn">
+            <IconButton color="inherit" href="https://www.linkedin.com/in/benjamin-wilfart-a06bb943/" target="_blank" >
+              <FontAwesomeIcon icon={faLinkedin} />
+            </IconButton>
+          </Tooltip>
+          <Tooltip title="Email me">
+            <IconButton color="inherit" href="mailto:benjamin.wilfart@gmail.com" >
+              <FontAwesomeIcon icon={faEnvelope} />
+            </IconButton>
+          </Tooltip>
         </div>
       </section>
     );

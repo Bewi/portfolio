@@ -2,11 +2,13 @@ import React, { Component } from 'react';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
+import Tooltip from '@material-ui/core/Tooltip';
 import { withStyles } from '@material-ui/core/styles';
 import IconButton from '@material-ui/core/IconButton';
 import classNames from 'classnames';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faLinkedin, faGithubAlt } from '@fortawesome/free-brands-svg-icons';
+import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 
 const styles = {
   noShaddows: {
@@ -20,8 +22,8 @@ const styles = {
     marginRight: 20,
   },
   '@keyframes slideDownAndFade': {
-    from: {opacity: 0, top: -10},
-    to: {opacity: 1, top: 0}
+    from: { opacity: 0, top: -10 },
+    to: { opacity: 1, top: 0 }
   },
   item: {
     top: -10,
@@ -34,9 +36,13 @@ const styles = {
     animationIterationCount: 1,
     animationFillMode: 'forwards'
   },
-  delay: {
+  delay1: {
     animationDelay: '0.1s'
+  },
+  delay2: {
+    animationDelay: '0.2s'
   }
+
 };
 
 class Header extends Component {
@@ -59,7 +65,7 @@ class Header extends Component {
       return null;
     }
 
-    const {classes} = this.props;
+    const { classes } = this.props;
     return (
       <AppBar className={classes.noShaddows}>
         <Toolbar>
@@ -71,18 +77,27 @@ class Header extends Component {
             <i className="App-header--cursor">_</i>
           </Typography>
           <div>
-            <IconButton color="inherit" className={classNames(classes.item, classes.appear)}>
-              <FontAwesomeIcon icon={faGithubAlt} />
-            </IconButton>
-            <IconButton color="inherit" className={classNames(classes.item, classes.appear, classes.delay)}>
-              <FontAwesomeIcon icon={faLinkedin} />
-            </IconButton>
+            <Tooltip title="Github">
+              <IconButton color="inherit" aria-label="Github" href="https://github.com/Bewi" target="_blank" className={classNames(classes.item, classes.appear)}>
+                <FontAwesomeIcon icon={faGithubAlt} />
+              </IconButton>
+            </Tooltip>
+            <Tooltip title="LinkedIn">
+              <IconButton color="inherit" aria-label="LinkedIn" href="https://www.linkedin.com/in/benjamin-wilfart-a06bb943/" target="_blank" className={classNames(classes.item, classes.appear, classes.delay1)}>
+                <FontAwesomeIcon icon={faLinkedin} />
+              </IconButton>
+            </Tooltip>
+            <Tooltip title="Email me">
+              <IconButton color="inherit" href="mailto:benjamin.wilfart@gmail.com" className={classNames(classes.item, classes.appear, classes.delay2)}>
+                <FontAwesomeIcon icon={faEnvelope} />
+              </IconButton>
+            </Tooltip>
           </div>
         </Toolbar>
       </AppBar>
     )
   }
-  
+
   handleScroll() {
     const shouldDisplay = window.pageYOffset > window.innerHeight - 64;
 
